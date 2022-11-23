@@ -9,7 +9,7 @@ namespace mtg_lite.Models.Cards
 {
     public class Sorcery : Card
     {
-        public Sorcery(string name, Mana manaCost, Bitmap picture) : base(name, manaCost, picture)
+        public Sorcery(string name, string type, Mana manaCost, Bitmap picture) : base(name, manaCost, picture)
         {
         }
 
@@ -18,13 +18,13 @@ namespace mtg_lite.Models.Cards
             switch (sorceryName)
             {
                 case "False peace":
-                    return new Sorcery("False peace", new Mana(0, 0, 0, 0, 1, 0), Resource.false_peace);
+                    return new Sorcery("False peace", "Sorcery", new Mana(0, 0, 0, 0, 1, 0), Resource.false_peace);
                     break;
                 case "Gaea's Blessing":
-                    return new Sorcery("Gaea's Blessing", new Mana(0, 0, 1, 0, 0, 1), Resource.gaea_s_blessing);
+                    return new Sorcery("Gaea's Blessing", "Sorcery", new Mana(0, 0, 1, 0, 0, 1), Resource.gaea_s_blessing);
                     break;
                 case "Death by dragons":
-                    return new Sorcery("Death by dragons", new Mana(0, 0, 0, 2, 0, 4), Resource.death_by_dragons);
+                    return new Sorcery("Death by dragons", "Sorcery", new Mana(0, 0, 0, 2, 0, 4), Resource.death_by_dragons);
                     break;
                 default:
                     throw new Exception("Erreur lors de la création de sorcery");

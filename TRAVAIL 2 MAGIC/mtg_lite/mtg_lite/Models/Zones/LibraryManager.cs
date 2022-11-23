@@ -1,8 +1,10 @@
 ﻿using mtg_lite.Models.Cards;
+using mtg_lite.Models.Cards.Permanent;
 using MTGO_lite.Models.Manas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,6 +16,23 @@ namespace mtg_lite.Models.Zones
 
         static LibraryManager()
         {
+            List<Card> listCard = new List<Card>
+            {
+                Sorcery.FabriquerSorcery("False peace"),
+                Sorcery.FabriquerSorcery("Gaea's Blessing"),
+                Sorcery.FabriquerSorcery("Death by dragons"),
+                Land.FabriquerLand("Island"),
+                Land.FabriquerLand("Plains"),
+                Land.FabriquerLand("Forest"),
+                Land.FabriquerLand("Mountain"),
+                Land.FabriquerLand("Swamp"),
+                Creature.FabriquerCreature("Fusion Elemental"),
+                Creature.FabriquerCreature("Savannah Lions"),
+                Creature.FabriquerCreature("Wooly Thoctar")
+            };
+
+            libraries.Add("Multicolor", listCard);
+
         }
 
         public static List<Card> GetCards(string libraryName)

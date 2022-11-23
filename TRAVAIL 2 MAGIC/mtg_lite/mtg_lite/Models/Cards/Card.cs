@@ -1,4 +1,5 @@
-﻿using MTGO_lite.Models.Manas;
+﻿using mtg_lite.Interfaces;
+using MTGO_lite.Models.Manas;
 using MTGO_lite.Models.Manas.ManaColors;
 using System;
 using System.Collections.Generic;
@@ -18,20 +19,37 @@ namespace mtg_lite.Models.Cards
         private bool tapped;
         private Guid guid;
 
+        private string type;
+
+
+
         public string Name { get => name; }
+
+        public virtual bool isPermanent { get => false; }
         public Bitmap Picture { get => picture; }
         public bool Tapped { get => tapped; set => ChangeTapped(value); }
         public Mana ManaCost { get => manaCost; }
+        public string Type { get => type; }
 
         public event EventHandler<bool>? TappedChanged;
+
+        
+
+        public Card(string name, string type, Mana manaCost, Bitmap picture)
+        {
+            this.name = name;
+            this.manaCost = manaCost;
+            this.picture = picture;
+            this.type = type;
+            tapped = false;
+            guid = Guid.NewGuid();
+        }
 
         public Card(string name, Mana manaCost, Bitmap picture)
         {
             this.name = name;
             this.manaCost = manaCost;
             this.picture = picture;
-            tapped = false;
-            guid = Guid.NewGuid();
         }
 
         private void ChangeTapped(bool value)
@@ -39,6 +57,7 @@ namespace mtg_lite.Models.Cards
             tapped = value;
             TappedChanged?.Invoke(this, tapped);
         }
+
 
         public static bool operator ==(Card card1, Card card2)
         {
