@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 
 namespace mtg_lite.Models.Zones
 {
-    public class Zone
+    public abstract class Zone
     {
         protected List<Card> cards;
         protected Player player;
 
         public List<Card> Cards { get { return cards; } }
-        public string Name { get => "Zone"; }
+        public abstract string Name { get; }
         public virtual Card TopCard {
             get
             {
@@ -53,10 +53,20 @@ namespace mtg_lite.Models.Zones
             CardsChanged?.Invoke(this, cards);
         }
 
+        public virtual void clickCard(Card card)
+        {
+
+        }
+
         protected void RemoveTopCard()
         {
+            CardRemoved?.Invoke(this, cards[cards.Count - 1]);
             cards.RemoveAt(cards.Count - 1);
+            CardsChanged?.Invoke(this, cards);
+
         }
+
+    
 
         public override string ToString()
         {

@@ -1,5 +1,4 @@
-﻿using mtg_lite.Interfaces;
-using MTGO_lite.Models.Manas;
+﻿using MTGO_lite.Models.Manas;
 using MTGO_lite.Models.Manas.ManaColors;
 using System;
 using System.Collections.Generic;

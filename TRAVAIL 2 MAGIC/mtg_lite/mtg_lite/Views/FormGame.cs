@@ -1,4 +1,5 @@
 using mtg_lite.Controllers;
+using mtg_lite.Models.Players;
 
 namespace mtg_lite
 {
@@ -16,10 +17,12 @@ namespace mtg_lite
 
         private void InitZonesDisplay()
         {
+
             libraryDisplay.Zone = controller.Player.Library;
             graveyardDisplay.Zone = controller.Player.Graveyard;
             handDisplay.Hand = controller.Player.Hand;
             battlefieldDisplay.Battlefield = controller.Player.Battlefield;
+
         }
     }
 }
