@@ -9,7 +9,7 @@ namespace mtg_lite.Models.Cards
 {
     public class Sorcery : Card
     {
-        public Sorcery(string name, string type, Mana manaCost, Bitmap picture) : base(name, manaCost, picture)
+        public Sorcery(string name, string type, Mana manaCost, Bitmap picture) : base(name, type, manaCost, picture)
         {
         }
 
@@ -31,7 +31,7 @@ namespace mtg_lite.Models.Cards
                     break;
             }
 
-            
+
         }
     }
 }

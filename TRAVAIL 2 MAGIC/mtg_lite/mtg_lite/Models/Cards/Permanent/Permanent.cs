@@ -9,8 +9,9 @@ namespace mtg_lite.Models.Cards.Permanent
 {
     public class Permanent : Card
     {
-        public override bool isPermanent { get => true; }
-        public Permanent(string name, Mana manaCost, Bitmap picture) : base(name, manaCost, picture)
+        public override bool isPermanent { get => true;}
+
+        public Permanent(string name, string type, Mana manaCost, Bitmap picture) : base(name, type, manaCost, picture)
         {
 
         }

@@ -44,13 +44,6 @@ namespace mtg_lite.Models.Cards
             guid = Guid.NewGuid();
         }
 
-        public Card(string name, Mana manaCost, Bitmap picture)
-        {
-            this.name = name;
-            this.manaCost = manaCost;
-            this.picture = picture;
-        }
-
         private void ChangeTapped(bool value)
         {
             tapped = value;

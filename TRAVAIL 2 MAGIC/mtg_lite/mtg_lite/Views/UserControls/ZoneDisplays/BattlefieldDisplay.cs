@@ -1,4 +1,5 @@
 ﻿using mtg_lite.Models.Cards;
+using mtg_lite.Models.Cards.Permanent;
 using mtg_lite.Models.Zones;
 using mtg_lite.Views.UserControls.CardDisplays;
 using System;
@@ -37,6 +38,29 @@ namespace mtg_lite.Views.UserControls.ZoneDisplays
         {
             if (battlefield is null) { return; }
             grpBattlefield.Text = battlefield.ToString();
+
+            List<Card> creatures = new List<Card>();
+            List<Card> lands = new List<Card>();
+
+
+            foreach (var card in battlefield.Cards)
+            {
+                Type type = card.GetType();
+
+                if (type.Equals(typeof(Creature)))
+                {
+                   creatures.Add(card);
+                }
+                else if (type.Equals(typeof(Land)))
+                {
+                    lands.Add(card);
+                }
+            }
+
+            creaturesDisplay.Cards = creatures;
+            landsDisplay.Cards = lands;
+
+            
         }
 
         private void BattlefieldUnsubscribe()

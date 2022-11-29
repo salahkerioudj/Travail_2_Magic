@@ -9,7 +9,7 @@ namespace mtg_lite.Models.Cards.Permanent
 {
     public class Creature : Permanent
     {
-        public Creature(string name, string type, Mana manaCost, Bitmap picture) : base(name, manaCost, picture)
+        public Creature(string name, string type, Mana manaCost, Bitmap picture) : base(name, type,  manaCost, picture)
         {
         }
 

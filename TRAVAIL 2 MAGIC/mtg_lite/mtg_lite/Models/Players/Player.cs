@@ -1,4 +1,5 @@
 ﻿using mtg_lite.Models.Cards;
+using mtg_lite.Models.Cards.Permanent;
 using mtg_lite.Models.Zones;
 using MTGO_lite.Models.Manas;
 using System;
@@ -48,6 +49,17 @@ namespace mtg_lite.Models.Players
 
         public void PlayCard(Card card)
         {
+            Type type = card.GetType();
+
+            if (card.isPermanent == true)
+            {
+               battlefield.AddCard(card);
+               
+            }
+            else
+            {
+                graveyard.AddCard(card);
+            }
         }
     }
 }

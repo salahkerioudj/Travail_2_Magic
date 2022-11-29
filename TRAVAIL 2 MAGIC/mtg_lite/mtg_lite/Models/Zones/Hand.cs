@@ -14,6 +14,21 @@ namespace mtg_lite.Models.Zones
         public override string Name { get => "Hand"; }
         public Hand(List<Card> cards, Player player) : base(cards, player)
         {
+
+        }
+
+        public override void clickCard(Card card)
+        {
+            if (cards.Count >= 1)
+            {
+                player.PlayCard(card);
+                RemoveCard(card);
+
+            }
+            else
+            {
+                throw new Exception("Il n'y plus de cartes dans votre main");
+            }
         }
     }
 }

@@ -57,8 +57,6 @@ namespace mtg_lite.Views.UserControls.ZoneDisplays
         private void cardDisplay_CardClicked(object sender, Models.Cards.Card card)
         {
 
-           
-
             try
             {
                 zone.clickCard(card);

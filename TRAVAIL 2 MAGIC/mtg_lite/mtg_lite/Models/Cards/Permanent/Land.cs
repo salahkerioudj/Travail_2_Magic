@@ -12,7 +12,7 @@ namespace mtg_lite.Models.Cards.Permanent
         private Mana manaCreated;
 
         public Mana ManaCreated { get => manaCreated; }
-        public Land(string name, string type, Mana manaCost, Bitmap picture, Mana manaCreated) : base(name, manaCost, picture)
+        public Land(string name, string type, Mana manaCost, Bitmap picture, Mana manaCreated) : base(name, type, manaCost, picture)
         {
             this.manaCreated = manaCreated;
         }
@@ -35,7 +35,7 @@ namespace mtg_lite.Models.Cards.Permanent
                     return new Land("Forest", "Land", new Mana(0, 0, 0, 0, 0, 0), Resource.forest, new Mana(0, 0, 1, 0, 0, 0));
                     break;
                 case "Plains":
-                    return new Land("Plains", "Land", new Mana(0, 0, 0, 0, 0, 0), Resource.forest, new Mana(0, 0, 0, 0, 1, 0));
+                    return new Land("Plains", "Land", new Mana(0, 0, 0, 0, 0, 0), Resource.plains, new Mana(0, 0, 0, 0, 1, 0));
                     break;
                 default:
                     throw new Exception("Erreur lors de la création de la land");
