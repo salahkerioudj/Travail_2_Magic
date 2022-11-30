@@ -41,8 +41,6 @@ namespace mtg_lite.Models.Cards.Permanent
                     throw new Exception("Erreur lors de la création de la land");
                     break;
             }
-
-
         }
     }
 }

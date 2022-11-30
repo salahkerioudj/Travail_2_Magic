@@ -82,6 +82,8 @@ namespace mtg_lite.Views.UserControls.ZoneDisplays
 
         private void cardsDisplay_CardClicked(object sender, Models.Cards.Card card)
         {
+            
+            //bitmap1.RotateFlip(RotateFlipType.Rotate180FlipY);
         }
     }
 }

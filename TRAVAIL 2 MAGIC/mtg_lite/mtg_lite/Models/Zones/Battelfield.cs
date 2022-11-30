@@ -17,7 +17,13 @@ namespace mtg_lite.Models.Zones
             
         }
 
+        public override void clickCard(Card card)
+        {
+            if (card.Type == "Land")
+            {
+                var land = (Land)card;
+            }
+        }
 
-       
     }
 }

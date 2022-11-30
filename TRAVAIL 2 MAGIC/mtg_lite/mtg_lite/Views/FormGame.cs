@@ -24,5 +24,10 @@ namespace mtg_lite
             battlefieldDisplay.Battlefield = controller.Player.Battlefield;
 
         }
+
+        private void manaPoolDisplay_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
