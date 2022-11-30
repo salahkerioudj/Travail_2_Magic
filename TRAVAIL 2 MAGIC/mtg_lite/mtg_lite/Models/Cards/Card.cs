@@ -44,9 +44,10 @@ namespace mtg_lite.Models.Cards
             guid = Guid.NewGuid();
         }
 
-        private void ChangeTapped(bool value)
+        public void ChangeTapped(bool value)
         {
             tapped = value;
+            Picture.RotateFlip(RotateFlipType.Rotate180FlipNone);
             TappedChanged?.Invoke(this, tapped);
         }
 

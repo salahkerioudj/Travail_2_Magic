@@ -20,19 +20,24 @@ namespace mtg_lite.Models.Zones
 
         public override void clickCard(Card card)
         {
-            card.Picture.RotateFlip(RotateFlipType.Rotate180FlipNone);
+            
             
 
             if (card.Type == "Land")
-            {   
+            {
+                if (card.Tapped == true)
+                {
+                    card.ChangeTapped(false);
+                }
+                else
+                {
+                    var land = (Land)card;
+                    this.player.ManaPool.Add(land.ManaCreated);
+                    card.ChangeTapped(true);
+                }
 
-                var land = (Land)card;
-
-                this.player.ManaPool.Add(land.ManaCreated);
             }
            
-            
-            
         }
 
     }

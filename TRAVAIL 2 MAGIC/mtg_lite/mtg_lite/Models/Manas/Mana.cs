@@ -56,7 +56,11 @@ namespace MTGO_lite.Models.Manas
 
         public void Pay(Mana manaToPay)
         {
-
+            if (Black < manaToPay.Black)
+            {
+                throw new Exception("Impossible de jouer cette carte. Mana Insuffisant");
+            }
+            Black.Remove(manaToPay.Black);
         }
 
         public void Add(Mana mana)

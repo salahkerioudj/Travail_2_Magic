@@ -51,6 +51,8 @@ namespace mtg_lite.Models.Players
         {
             Type type = card.GetType();
 
+            manaPool.Pay(card.ManaCost);
+
             if (card.isPermanent == true)
             {
                battlefield.AddCard(card);
