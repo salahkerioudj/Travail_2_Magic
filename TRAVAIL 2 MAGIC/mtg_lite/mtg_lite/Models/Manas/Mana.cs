@@ -56,11 +56,22 @@ namespace MTGO_lite.Models.Manas
 
         public void Pay(Mana manaToPay)
         {
-            if (Black < manaToPay.Black)
+            if (Black < manaToPay.Black ||
+                Blue < manaToPay.Blue ||
+                Green < manaToPay.Green ||
+                Red < manaToPay.Red ||
+                White < manaToPay.White
+                )
             {
                 throw new Exception("Impossible de jouer cette carte. Mana Insuffisant");
             }
+
+
             Black.Remove(manaToPay.Black);
+            Blue.Remove(manaToPay.Blue);
+            Green.Remove(manaToPay.Green);
+            Red.Remove(manaToPay.Red);
+            White.Remove(manaToPay.White);
         }
 
         public void Add(Mana mana)
