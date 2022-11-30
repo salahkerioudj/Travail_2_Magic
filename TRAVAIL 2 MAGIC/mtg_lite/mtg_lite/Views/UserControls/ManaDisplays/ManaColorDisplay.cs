@@ -25,7 +25,13 @@ namespace mtg_lite.Views.UserControls.ManaDisplays
         private void ChangeManaColor(ManaColor? newManaColor)
         {
             manaColor = newManaColor;
+            newManaColor.QuantityChanged += NewManaColor_QuantityChanged;
             DisplayManaColor();
+        }
+
+        private void NewManaColor_QuantityChanged(object? sender, int quantity)
+        {
+            lblQuantity.Text = quantity.ToString();
         }
 
         private void DisplayManaColor()
@@ -39,6 +45,7 @@ namespace mtg_lite.Views.UserControls.ManaDisplays
         {
             if (manaColor is null) { return; }
             lblQuantity.Text = manaColor.Quantity.ToString();
+           
         }
     }
 }

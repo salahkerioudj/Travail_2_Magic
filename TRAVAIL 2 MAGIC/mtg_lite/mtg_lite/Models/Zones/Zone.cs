@@ -55,7 +55,7 @@ namespace mtg_lite.Models.Zones
 
         public virtual void clickCard(Card card)
         {
-
+           
         }
 
         protected void RemoveTopCard()
