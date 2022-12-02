@@ -31,7 +31,9 @@ namespace mtg_lite.Models.Zones
                 Creature.FabriquerCreature("Wooly Thoctar")
             };
 
-            libraries.Add("Multicolor", listCard);
+            var shuffled = listCard.OrderBy(x => Guid.NewGuid()).ToList();
+
+            libraries.Add("Multicolor", shuffled);
 
         }
 
